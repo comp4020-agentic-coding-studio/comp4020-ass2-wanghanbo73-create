@@ -1,30 +1,29 @@
 ---
 title: Opening lecture
 description:
-  The first lecture — what the course is, why it is shaped this way, and what
-  happens in week 1
+  What this course is, why it is shaped as an investigation rather than a
+  syllabus, and what a student needs to have ready before Week 1's session.
 week: 1
 date: 2027-02-22
 teachers:
   - marisol-quaye
 slides: /decks/week-01/
 related:
-  - sessions/01-getting-started
+  - sessions/01-naming-what-you-see
 ---
 
-<!-- STARTER_CONTENT: replace this lecture, then remove this comment. -->
-
-Replace this page. A lecture entry says what was covered and links to the pages
-that own the detail, so the lecture stays short and nothing is explained twice.
-
-The `related:` ref above is a graph edge: it renders on this page and on the
-session's, so declare a connection once, on whichever side is convenient.
-
-The page renders its `slides:` link automatically. Decks are markdown too,
-under `src/decks/`; the path is part of the lecture's API metadata.
+The course's central claim: diagnosing a system you did not build is a
+distinct, teachable discipline, not a byproduct of general programming
+ability. This lecture sets out the fixed investigative cycle the semester is
+built around, and why the course withholds background on any given system
+deliberately rather than as an oversight.
 
 ## Outline
 
-- what the course is for
-- how the weeks are shaped
-- what to do before the first session
+- why an inherited, failing system is the course's subject, not a database, a
+  language, or a tool
+- the six-stage cycle: Observe → Hypothesise → Gather Evidence → Reduce
+  Uncertainty → Intervene → Verify
+- how scaffolding withdraws across the semester, and what stays constant
+  while it does
+- what to have ready before Week 1's session

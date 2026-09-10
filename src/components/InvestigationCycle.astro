@@ -1,0 +1,40 @@
+---
+// Restrained, text-only rendering of the course's fixed six-stage cycle.
+// Deliberately not a diagram library or an animated graphic — see
+// docs/course-design.md §8 on writing voice, which the visual language
+// follows too.
+const STAGES = ["Observe", "Hypothesise", "Gather Evidence", "Reduce Uncertainty", "Intervene", "Verify"];
+---
+
+<ol class="investigation-cycle" aria-label="The investigative cycle">
+  {STAGES.map((stage) => (
+    <li>{stage}</li>
+  ))}
+</ol>
+
+<style>
+  .investigation-cycle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: var(--at-font-mono, monospace);
+    font-size: 0.85rem;
+  }
+
+  .investigation-cycle li {
+    padding: 0.3rem 0.7rem;
+    border: 1px solid var(--at-border, currentColor);
+    border-radius: 0.25rem;
+    color: var(--at-text-secondary);
+    background: var(--at-bg-alt);
+  }
+
+  .investigation-cycle li:not(:last-child)::after {
+    content: "→";
+    margin-inline-start: 0.6rem;
+    color: var(--at-text-secondary);
+  }
+</style>

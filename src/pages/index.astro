@@ -3,11 +3,9 @@ import Card from "astro-theme-university/components/Card.astro";
 import CardGrid from "astro-theme-university/components/CardGrid.astro";
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
 import heroImage from "../assets/images/hero-home.avif";
+import InvestigationCycle from "../components/InvestigationCycle.astro";
 import { courseMeta } from "../course-config";
 import { sessionLabels, siteConfig } from "../site-config";
-
-// STARTER_CONTENT: replace the hero artwork and its alt text below, then
-// remove this comment.
 ---
 
 <ContentLayout
@@ -21,21 +19,52 @@ import { sessionLabels, siteConfig } from "../site-config";
     {courseMeta.tags.map((tag) => <li>{tag}</li>)}
   </ul>
 
-  <!-- STARTER_CONTENT: replace the authored page below, then remove this comment. -->
-  <h2>What you will do</h2>
+  <p class="subtitle">A forensic approach to understanding and repairing unfamiliar software.</p>
+
   <p>
-    Say what a student spends their time on — the making, reading, arguing or
-    measuring that fills the weeks. Name the artefact they walk out with.
+    You have just been handed a system you did not build. Its author is not in
+    the room. Something in it is failing, the documentation is partial or
+    out of date, and the only way to find out what is actually wrong is to
+    investigate it — read it, run it, question your own assumptions about it,
+    and prove a diagnosis with evidence before you touch anything. That
+    situation, not a topic on a syllabus, is what {courseMeta.code} teaches.
+  </p>
+
+  <p>
+    This is not a tour of debugging tools, and it is not a general software
+    engineering survey organised by technology. Every system you meet here
+    was built by someone else and is already running; nothing in this course
+    asks you to build one from a blank slate. What is graded is the
+    investigation itself.
+  </p>
+
+  <h2>The cycle</h2>
+  <p>
+    Every exercise runs the same fixed sequence. What changes across the
+    semester is not the sequence, but how much of it is scaffolded for you.
+  </p>
+  <InvestigationCycle />
+  <p>
+    Weeks 1–2 model this cycle closely. From there, scaffolding recedes:
+    evidence sources widen, hypotheses start to compete with each other, and
+    by the final weeks you are running the full cycle, unassisted, on a
+    system you have never seen before.
   </p>
 
   <h2>Who it is for</h2>
   <p>
-    Say who this is aimed at and what they need to already know. Be specific
-    enough that someone can rule themselves in or out without emailing you.
+    Students who already write software competently but have found
+    themselves — in an internship, a group project, an open-source
+    contribution — responsible for code they did not write and do not yet
+    understand. No specific language, framework, or tool is assumed; the bar
+    is judgment and code literacy, not familiarity with a particular stack.
   </p>
 
   <h2>Where to go next</h2>
   <CardGrid columns={2}>
+    <Card title="Course Overview" href="/course/">
+      <p>The investigation method, learning outcomes, and who this course is for.</p>
+    </Card>
     <Card title={sessionLabels.plural} href="/sessions/">
       <p>The weekly schedule and what happens in each teaching session.</p>
     </Card>
@@ -64,5 +93,11 @@ import { sessionLabels, siteConfig } from "../site-config";
     color: var(--at-text-secondary);
     background: var(--at-bg-alt);
     font-size: 0.9rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: var(--at-text-secondary);
+    font-style: italic;
   }
 </style>

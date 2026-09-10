@@ -1,0 +1,103 @@
+---
+layout: ../../layouts/PageLayout.astro
+title: Course Overview
+description:
+  "Why diagnosing someone else's software is a distinct skill, the method the
+  course teaches it through, who it's for, and what it deliberately leaves out."
+heroTitle: Course Overview
+---
+
+## Course premise
+
+Most software teaching assumes you're building something, or reading code
+you wrote yourself a week ago. Neither assumption holds once you're on a
+team: the system in front of you was built by people who've moved on, its
+documentation is partial or stale, and something in it is failing for
+reasons nobody in the room currently understands. Reconstructing what a
+system was meant to do, forming a hypothesis you could be wrong about, and
+proving a diagnosis with evidence rather than intuition is not a byproduct
+of knowing how to program — it's a separate discipline, and this course
+treats it as one.
+
+## The investigation method
+
+Every exercise and every assessment in this course runs the same fixed
+cycle. It doesn't change week to week; what changes is how much of it is
+scaffolded for you, and how uncooperative the system and its evidence are.
+
+1. **Observe.** State what is actually happening — output, behaviour,
+   logs — precisely enough that someone else could check it, without folding
+   in a guess about why.
+2. **Hypothesise.** Propose a specific, falsifiable cause, and commit in
+   advance to what evidence would prove it wrong.
+3. **Gather Evidence.** Collect whatever a hypothesis actually calls for —
+   source structure, runtime traces, version history, operational
+   artefacts — rather than whatever happens to be easiest to look at.
+4. **Reduce Uncertainty.** Use that evidence to eliminate hypotheses that
+   don't survive it, including ones you'd have preferred to be true.
+5. **Intervene.** Make the smallest change that addresses the diagnosed
+   cause, having first checked what else it could plausibly disturb.
+6. **Verify.** Confirm the intervention resolved the cause you diagnosed —
+   not merely that the original symptom stopped appearing.
+
+## Learning outcomes
+
+By the end of the course, you will be able to:
+
+1. Reconstruct a working model of an unfamiliar system's intended behaviour
+   from its code, structure, and available documentation, explicitly marking
+   what remains unknown.
+2. Formulate falsifiable hypotheses about the cause of an observed failure,
+   and design the smallest observation or experiment that could rule a
+   hypothesis out.
+3. Collect and interpret evidence — logs, traces, state snapshots, targeted
+   instrumentation — appropriate to a given system and failure, and
+   distinguish signal from coincidence in it.
+4. Narrow a fault to a specific, defensible location in a system, and
+   justify why alternative explanations were excluded rather than merely
+   unconsidered.
+5. Propose and apply a minimal, targeted intervention, and verify that it
+   resolves the original failure without relying on the symptom's
+   disappearance as the sole evidence.
+
+## Intended students
+
+Upper-level undergraduates or entry postgraduates who already write software
+competently but keep finding themselves — in internships, group projects,
+open-source contributions, inherited work — responsible for a system they
+did not write and don't yet understand. This course treats that specific
+gap, reading and diagnosing someone else's system, as a skill in its own
+right rather than something general programming ability eventually confers.
+
+## Prerequisites
+
+- Comfortable reading and writing code in at least one imperative or
+  object-oriented language, and able to pick up an unfamiliar one's syntax
+  from context.
+- Prior exposure to version control, a debugger, and the basic idea of
+  automated tests — not mastery of any of them.
+- One prior systems-adjacent course (operating systems, databases, software
+  construction, or similar) is recommended but not required; each exercise
+  supplies enough context to make its fault reachable without that
+  background.
+
+No specific framework, language, IDE, database, or cloud platform is
+assumed. The bar is judgment and code literacy, not tool familiarity.
+
+## What this course is not
+
+- **Not a tour of debugging tools.** Any tool that appears in an exercise is
+  incidental to that exercise, not something the course teaches you to
+  operate.
+- **Not a general software engineering survey.** Databases, networking,
+  concurrency, and performance show up only as the setting for a specific
+  fault, never as topics to cover in sequence.
+- **Not a course about designing new systems.** Every system you encounter
+  is inherited; any code you write exists to investigate, instrument, or
+  minimally repair it, not to build something new.
+- **Not a practice of editing code until the tests pass.** A correct final
+  state earns nothing on its own — see [Assessment Overview](/assessments/)
+  and [Policies](/policies/) for what's actually graded instead.
+
+For the week-by-week structure this method builds through, see the
+[Schedule](/sessions/).

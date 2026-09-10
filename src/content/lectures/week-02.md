@@ -1,23 +1,25 @@
 ---
 title: Second lecture
 description:
-  Week 2 — the first substantive material, and the run-up to the first review
+  Why a hypothesis needs a disconfirming test to count as one, and how
+  Debugging Field Notes turns that habit into the semester's first graded work.
 week: 2
 date: 2027-03-01
 teachers:
   - idris-fenn
 related:
-  - sessions/02-first-review
-  - assessments/assignment-1
+  - sessions/02-a-hypothesis-that-could-be-wrong
+  - assessments/debugging-field-notes
 ---
 
-<!-- STARTER_CONTENT: replace this lecture, then remove this comment. -->
-
-Replace this page. It exists so the lectures listing sorts by week and the
-related block has more than one edge to draw.
+Where Week 1 drew the line between an observation and an assumption, this
+lecture draws the next one: between a hypothesis that is merely plausible and
+one that is actually useful, because it commits in advance to what would
+prove it wrong.
 
 ## Outline
 
-- the first substantive material, and where it shows up in practice
-- what the first review is looking for
-- reading before next week
+- why a hypothesis without a named disconfirming test doesn't count as one
+- committing to a test before running it, and reporting a refuted guess
+  honestly
+- how Debugging Field Notes (Weeks 1–4, 15%) grades this habit directly
