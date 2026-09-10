@@ -1,53 +1,65 @@
 # Process overview
 
-<!-- TEMPLATE: this file is a shape to fill in, not a form. Replace everything
-     in it with your own overview, and delete this comment — `pnpm
-     check:evidence` will remind you if it's still here. -->
-
-Written by you, for a reader: how you got from the brief to the harness and
-agentic workflow behind this submission. Markers read this file and follow its
-citations; they don't trawl the repo for evidence you didn't point at.
-
-This file is the shape; the course site's
-[assessment page](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/topics/assessment/#what-you-submit)
-is the requirement, and its
-[word counts](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/topics/assessment/#word-counts)
-cover every deliverable.
-
 ## What I built
 
-One paragraph: the thing, and the idea behind it.
+SLOP4xxx, "Debugging Systems You Did Not Build": a twelve-week course that
+treats diagnosing an inherited, failing system as a distinct discipline,
+graded on the trail of observation, hypothesis, evidence, and verification a
+student produces, not on whether the final patch happens to work.
 
 ## How I got here
 
-The account of the process: how the work actually went, and how you knew the
-result was right. Tell it in whatever order makes it clear. A weekly prototype
-needs a paragraph or two; an assignment needs more.
+### Designing before generating
 
-Cite the record as you go, as links whose text is the commit hash or range and
-whose target is this repo's commit or compare URL, so a reader clicks straight
-to the evidence:
+I did not start by generating pages. I first fixed the course's identity,
+its twelve-week arc, and its assessment scheme as separate design documents —
+[`c6c0885`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-wanghanbo73-create/commit/c6c0885),
+[`27cb93e`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-wanghanbo73-create/commit/27cb93e),
+[`18ed3d4`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-wanghanbo73-create/commit/18ed3d4).
+The load-bearing decision made there is that the twelve weeks are ordered by
+*where uncertainty sits in an investigation* — clean evidence with competing
+hypotheses (Week 6) versus evidence that is itself unreliable (Week 7); a
+diagnosis made easy so intervention risk becomes the lesson (Week 8) — rather
+than by technology or debugging tool. That distinction is what stopped later
+weeks from becoming a reskin of each other.
 
-- one commit: [`a1b2c3d`](https://github.com/YOUR-ORG/YOUR-REPO/commit/a1b2c3d)
-- a range:
-  [`a1b2c3d...e4f5a6b`](https://github.com/YOUR-ORG/YOUR-REPO/compare/a1b2c3d...e4f5a6b)
+### Turning design into constraints
 
-To pair a prompt with the commit it produced, quote the prompt (curated, not a
-full transcript) next to the citation:
+[`904d006`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-wanghanbo73-create/commit/904d006)
+turned those design documents into `CLAUDE.md` and `spec/`, and this is where
+I constrained the agent rather than trusting its output. I deliberately did
+not add frontmatter fields like `incident` or `cycle` just to make qualitative
+promises (that every week opens from a failure, that Week 12 is a live
+defence) mechanically checkable — a field invented solely so a test can read
+it isn't a real course contract, so those promises stay judged by a human
+reader against `CLAUDE.md`, while `spec/` only asserts what the generated
+course API can actually prove: week coverage and the 15/25/25/35 weighting.
 
-> the prompt, verbatim
+### Building in controlled batches
 
-Screenshots are welcome where one carries the point better than a sentence does.
-Commit the file to this repo and link it with a **relative** path, which is what
-makes it render on GitHub: `![alt text](docs/before.png)`. Images don't count
-towards the word count and don't replace the citation.
+Content was generated in four batches —
+[`17229fc`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-wanghanbo73-create/commit/17229fc)
+for core pages,
+[`d0fc9bb...90d0a85`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-wanghanbo73-create/compare/d0fc9bb...90d0a85)
+for Weeks 1–12 — never all twelve weeks in one pass. Each batch ended with me
+reviewing the agent's own output for repetition and drift before the next
+batch started: an early pass toward Weeks 6–7 initially blurred the
+hypothesis-space-versus-evidence-reliability distinction, and I rejected that
+draft and required the two failure modes to be named explicitly.
 
-## Before you ship
+### Responding to failures
 
-`pnpm check:evidence` verifies that this comment is gone, that your citations
-resolve to real commits, that a crit week's reflection entry is in
-`reflections/`, and that your `CLAUDE.md` is there. It checks that your account
-is traceable, not that it is good: that is the marker's call.
+The build's link checker caught a hand-written `href="/sessions/"` that
+resolved on localhost but would 404 under the deployed base path; I fixed it
+with the theme's `withBase()` rather than disabling the checker. A frontmatter
+spec list with an unquoted colon similarly broke YAML parsing and was a
+content fix, not a checker workaround.
 
-Images aren't checked: unlike a citation whose SHA doesn't resolve, a broken
-image is visible the moment this file is rendered on GitHub.
+### Final verification
+
+The closing audit found no defect in the taught content, so I made no
+cosmetic edits there to manufacture activity. It did find that
+`pnpm check:evidence` still failed: two person entries and four images were
+still the starter's placeholders. I replaced the bios and removed the
+starter images for a deliberate image-free treatment rather than fabricating
+artwork, which the starter's own rules permit.
