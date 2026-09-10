@@ -17,16 +17,39 @@ related:
 
 ## Before the session
 
-The failure in this week's system was introduced by a historical change — a
-commit, a migration, a configuration edit — that isn't visible in the
-present-day source or its runtime behaviour.
+Bring your Week 3 structural model of `fulfil` and your Week 4 instinct for
+runtime evidence — this week's fault is invisible to both until you add a
+third source, but neither one stops being useful.
+
+## The incident
+
+A small fraction of `fulfil`'s orders are being handed to Continental
+Parcel — a carrier Northfield Mercantile stopped using at the start of the
+year. Nothing in the present-day routing code names Continental Parcel; the
+lookup table your Week 3 model already covers lists only current carriers.
+Runtime traces (Week 4's evidence class) confirm the symptom is real: for the
+affected orders, `fulfil` genuinely issues an outbound call to Continental
+Parcel's API. Reading the current source harder will not explain a call to a
+carrier the source doesn't mention.
+
+## Introduced near the failure, or caused it?
+
+Version history shows a carrier-table consolidation migration that ran
+fourteen weeks ago, and — in the same week — an unrelated logging refactor
+that happened to touch the same file. Bisecting by proximity in time alone
+would leave you unable to tell which of the two is relevant, or whether
+either is. "This change is the closest one in time" is not the same claim as
+"this change is why the failure happens," and the practical is built so that
+conflating the two produces a wrong answer that still feels confident.
 
 ## In the session
 
-You use commit history to bisect toward the change that introduced the
-fault, then confirm with structural and/or runtime evidence that the change
-you found is actually the cause, not something merely correlated with the
-timing of the break.
+You bisect through version history toward a candidate change, then use
+structural and/or runtime evidence — not the commit timestamp — to test
+whether that change is actually responsible. A candidate that survives this
+check is more than temporally adjacent to the failure; a candidate that
+doesn't survive it is a coincidence you were right to suspect and right to
+rule out.
 
 ## Afterwards
 
