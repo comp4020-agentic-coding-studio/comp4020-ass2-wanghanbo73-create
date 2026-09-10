@@ -1,48 +1,133 @@
 ---
-title: Opening lecture
-description: The placeholder deck — replace it with a real deck for your course
----
-
-# Opening lecture
-
-{/* STARTER_CONTENT: replace this deck, then remove this comment. */}
-
-Replace this deck. It is here to show that slides are part of the site, built
-from the same markdown as everything else.
-
----
-
-## Slides are markdown
-
-A `---` starts a new slide. Everything else is ordinary markdown: headings,
-lists, links, tables, images, fenced code.
-
-- one idea per slide
-- the fewest words that carry it
-- the deck is a performance artefact, so it can say things a page wouldn't
-
+title: Naming What You See
+description: Opening lecture deck — observation versus assumption, and the investigative cycle the semester runs on.
 ---
 
 {/* _class: impact */}
 
-# A slide class
+# You inherited the system
 
-`{/* _class: impact */}` fills the slide with the brand colour. `quote`,
-`banner` and `centered` are the others the theme styles.
+`order-total` — a single file, under 150 lines, written by someone who is not
+in this room.
+
+You did not design it. You cannot ask its author why a line is the way it is.
 
 ---
 
-## What else is here
+## Symptom is not cause
 
-```sh
-pnpm dev
-pnpm check
+"The total is wrong on order 4471" is a symptom description.
+
+It says nothing about *where* — tax, discount, rounding, something upstream.
+
+Treating a symptom as a diagnosis is where most investigations go wrong first.
+
+---
+
+## Observation versus explanation
+
+An **observation** is something someone else could check by repeating what
+you did.
+
+An **explanation** is a claim about *why* it happened.
+
+They feel like the same sentence. They are not the same kind of claim.
+
+---
+
+```text
+Observation:
+The request returned HTTP 500 at 14:03.
+
+Not an observation:
+The database connection failed.
 ```
 
-The second command proves the deck compiles with the rest of the site. Use the
-first to inspect every slide at the desktop and phone marking viewports; slide
-fit and legibility are visual judgements.
+The second line might be true later. It isn't something you observed at 14:03.
 
-The [astromotion](https://github.com/ANUcybernetics/astromotion) README has the
-rest of the syntax: speaker notes, backgrounds, QR codes, fragments, and
-components hydrated per slide.
+---
+
+## Good observations
+
+- name the exact input
+- name the exact output
+- name the exact conditions
+- let someone else reproduce them without asking you anything
+
+```text
+Running `order-total --order 4471` prints 84.70.
+The printed receipt for order 4471 shows 85.00.
+Order 4460 (no discount code) matches its receipt.
+```
+
+---
+
+## Bad observations
+
+```text
+The discount logic seems to be off by a bit.
+```
+
+This sentence already contains:
+
+- a diagnosis ("the discount logic")
+- a severity judgement ("a bit")
+- nothing another person could check
+
+It reads like progress. It is not evidence.
+
+---
+
+## The investigation cycle
+
+**Observe → Hypothesise → Gather Evidence → Reduce Uncertainty → Intervene →
+Verify**
+
+Every exercise this semester runs this sequence. What changes week to week is
+how much of it is scaffolded — not the sequence itself.
+
+---
+
+## A worked evidence trail
+
+```text
+1. `order-total --order 4471` → 84.70
+2. Receipt for order 4471 → 85.00
+3. `order-total --order 4460` (no discount) → matches its receipt
+4. No error output on either run
+```
+
+Four lines. No cause named. Each one independently checkable.
+
+---
+
+## Practical setup
+
+Today, before opening `order-total`'s source:
+
+Write a numbered observation log for order 4471 — facts only.
+
+An entry that names a cause before the log is complete does not count as an
+entry.
+
+---
+
+{/* _class: quote */}
+
+## What not to do
+
+Do not write "the discount logic is off" and call it observation #1.
+
+An observation written after a cause has already been guessed at tends to
+smuggle the guess back in as fact.
+
+---
+
+{/* _class: centered */}
+
+## Exit question
+
+If you rewrote your log after opening the source, would it still read the
+same?
+
+If not, which lines changed — and why did they need to?
