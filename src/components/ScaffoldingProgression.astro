@@ -1,0 +1,80 @@
+---
+// Compact, text-anchored visual of how much support each stretch of the
+// semester provides. The tick count is the visual signal (scaffolding
+// receding); the labels carry the actual meaning, so nothing depends on
+// the graphic alone. Deliberately one bar, not twelve weekly illustrations.
+const STAGES = [
+  { weeks: "Weeks 1–2", label: "Modelled cycle", ticks: 6 },
+  { weeks: "Weeks 3–5", label: "Wider evidence", ticks: 5 },
+  { weeks: "Weeks 6–7", label: "Competing hypotheses", ticks: 3 },
+  { weeks: "Weeks 8–9", label: "Intervention & verification", ticks: 2 },
+  { weeks: "Weeks 10–11", label: "Independent investigation", ticks: 1 },
+  { weeks: "Week 12", label: "Defence", ticks: 0 },
+];
+---
+
+<ol class="scaffolding-progression" aria-label="Scaffolding across the semester, from heaviest to none">
+  {STAGES.map((stage) => (
+    <li>
+      <span class="ticks" aria-hidden="true">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <span class:list={["tick", { filled: i < stage.ticks }]} />
+        ))}
+      </span>
+      <span class="weeks">{stage.weeks}</span>
+      <span class="label">{stage.label}</span>
+    </li>
+  ))}
+</ol>
+
+<style>
+  .scaffolding-progression {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .scaffolding-progression li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .ticks {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 1.1rem;
+  }
+
+  .tick {
+    flex: 1;
+    height: 40%;
+    background: var(--at-border);
+  }
+
+  .tick.filled {
+    height: 100%;
+    background: var(--at-accent);
+  }
+
+  .weeks {
+    font-family: var(--at-font-mono, monospace);
+    font-size: 0.75rem;
+    color: var(--at-text-muted);
+  }
+
+  .label {
+    font-size: 0.85rem;
+    color: var(--at-text-secondary);
+  }
+
+  @media (max-width: 640px) {
+    .scaffolding-progression {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
