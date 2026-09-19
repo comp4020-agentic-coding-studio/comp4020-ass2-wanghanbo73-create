@@ -1,5 +1,5 @@
 ---
-title: Eighth lecture
+title: The Blast Radius of a Fix
 description:
   Why removing a symptom is not the same as knowing a fix is safe, and how
   to reason about what an intervention might disturb before applying it.

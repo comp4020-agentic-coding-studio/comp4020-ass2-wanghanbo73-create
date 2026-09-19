@@ -1,5 +1,5 @@
 ---
-title: Tenth lecture
+title: Choosing Where to Begin
 description:
   How to plan an investigation into a large, unfamiliar system when nobody
   tells you which component, file, or evidence source to start with.

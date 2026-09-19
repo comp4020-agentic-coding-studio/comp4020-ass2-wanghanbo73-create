@@ -1,5 +1,5 @@
 ---
-title: Eleventh lecture
+title: How Much Should You Trust the System?
 description:
   What changes when the system's own evidence cannot be trusted at face
   value — and why the answer is calibrated confidence, not blanket distrust.

@@ -1,5 +1,5 @@
 ---
-title: Fifth lecture
+title: Timing Is a Lead, Not a Verdict
 description:
   Why a system's history counts as evidence, and why the change that sits
   closest in time to a failure is not automatically the change that caused

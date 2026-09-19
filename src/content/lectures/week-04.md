@@ -1,5 +1,5 @@
 ---
-title: Fourth lecture
+title: Instrumentation Is a Hypothesis Too
 description:
   What runtime evidence can tell you that reading the code cannot, and why
   instrumentation only counts as investigation when a structural model

@@ -1,5 +1,5 @@
 ---
-title: Third lecture
+title: A Model Is a Claim, Not a Map
 description:
   How to build a working model of a system's intended behaviour when there is
   no one left to explain it, and why structural reading has to do the work

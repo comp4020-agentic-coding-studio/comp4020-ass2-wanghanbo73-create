@@ -1,5 +1,5 @@
 ---
-title: Twelfth lecture
+title: The Weakest Link in the Chain
 description:
   What it means to defend an investigation rather than merely present one,
   and how to find the weakest link in a reasoning chain — including your

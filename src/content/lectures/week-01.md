@@ -1,5 +1,5 @@
 ---
-title: Opening lecture
+title: Observation Before Explanation
 description:
   What this course is, why it is shaped as an investigation rather than a
   syllabus, and what a student needs to have ready before Week 1's session.

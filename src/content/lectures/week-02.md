@@ -1,5 +1,5 @@
 ---
-title: Second lecture
+title: Proving a Hypothesis Wrong on Purpose
 description:
   Why a hypothesis needs a disconfirming test to count as one, and how
   Debugging Field Notes turns that habit into the semester's first graded work.

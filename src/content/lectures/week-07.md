@@ -1,5 +1,5 @@
 ---
-title: Seventh lecture
+title: A Fact Needs a Source Before a Verdict
 description:
   What to do when two pieces of evidence contradict each other — and why
   that is a different problem from two hypotheses that both fit the same,

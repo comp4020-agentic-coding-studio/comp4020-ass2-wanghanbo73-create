@@ -1,5 +1,5 @@
 ---
-title: Ninth lecture
+title: What Does This Test Actually Prove?
 description:
   Why a disappeared symptom and a passing smoke test are evidence for a
   narrower claim than "the diagnosed cause is fixed," and how to verify the

@@ -1,5 +1,5 @@
 ---
-title: Sixth lecture
+title: Discriminating Between Explanations
 description:
   How to choose between two explanations that both fit the evidence you
   already have, by asking what each one predicts under a change you
